@@ -14,7 +14,7 @@ const Banner: React.FC<BannerProps> = ({
   style,
   className,
   classes,
-  showBadge = false
+  showBadge = false,
 }) => {
   return (
     <div className={clsx(styles.banner, className)} style={style}>
@@ -37,10 +37,7 @@ const Banner: React.FC<BannerProps> = ({
       >
         <Row className="justify-content-center">
           <Col sm={12}>
-           {showBadge && <span className={styles["banner-badge"]}>
-              Light
-            </span>
-}
+            {showBadge && <span className={styles["banner-badge"]}>Light</span>}
             {title && (
               <h1
                 className={clsx(styles["banner-title"], classes?.bannerTitle)}

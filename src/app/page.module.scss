@@ -20,3 +20,17 @@
     color: rgba(122, 101, 225, 1);
   }
 }
+.banner-cards-container {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+
+}
+.banner-card {
+  width: auto;
+  max-height: 260px;
+  gap: 4px;
+  &-title{
+    font-size: 1.5rem;
+  }
+}
