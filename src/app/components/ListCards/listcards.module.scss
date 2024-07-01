@@ -1,4 +1,11 @@
 .listCards {
+  margin-inline: 0;
+  padding-inline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  flex-direction: column;
   .loadMoreContainer {
     text-align: center;
     margin-top: 20px;

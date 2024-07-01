@@ -1,17 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import styles from "./banner.module.scss";
-
-interface BannerProps {
-  bgImageSrc?: string;
-  width?:number;
-  height?: number;
-  title?: string;
-  description?: string;
-  actionTitle?: string;
-  onActionClick?: () => void;
-}
+import clsx from "clsx";
+import { BannerProps } from "./Banner.type";
 
 const Banner: React.FC<BannerProps> = ({
   bgImageSrc,
@@ -19,9 +11,13 @@ const Banner: React.FC<BannerProps> = ({
   description,
   actionTitle,
   onActionClick,
+  style,
+  className,
+  classes,
+  showBadge = false
 }) => {
   return (
-    <div className={styles.banner}>
+    <div className={clsx(styles.banner, className)} style={style}>
       {bgImageSrc && (
         <Image
           placeholder="blur"
@@ -30,23 +26,48 @@ const Banner: React.FC<BannerProps> = ({
           alt={title || "Banner Image"}
           priority
           layout="fill"
-          className={styles["banner-image"]}
+          className={clsx(styles["banner-image"], classes?.bannerImage)}
         />
       )}
-      <div className={styles["banner-overlay"]}></div>
-      <Container className={styles["banner-content"]}>
+      <div
+        className={clsx(styles["banner-overlay"], classes?.bannerOverlay)}
+      ></div>
+      <Container
+        className={clsx(styles["banner-content"], classes?.bannerContent)}
+      >
         <Row className="justify-content-center">
           <Col sm={12}>
-            {title && <h1 className={styles["banner-title"]}>{title}</h1>}
+           {showBadge && <span className={styles["banner-badge"]}>
+              Light
+            </span>
+}
+            {title && (
+              <h1
+                className={clsx(styles["banner-title"], classes?.bannerTitle)}
+              >
+                {title}
+              </h1>
+            )}
             {description && (
-              <p className={styles["banner-description"]}>{description}</p>
+              <p
+                className={clsx(
+                  styles["banner-description"],
+                  classes?.bannerDescription
+                )}
+              >
+                {description}
+              </p>
             )}
           </Col>
         </Row>
         <Col sm={12}>
           {actionTitle && (
             <button
-              className={styles["banner-action"] + " justify-content-center"}
+              className={clsx(
+                styles["banner-action"],
+                classes?.bannerAction,
+                " justify-content-center"
+              )}
               onClick={onActionClick}
             >
               {actionTitle}

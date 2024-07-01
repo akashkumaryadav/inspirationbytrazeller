@@ -1,6 +1,6 @@
 import Banner from "@/app/components/Banner";
-import { Col, Container, Row } from "react-bootstrap";
 import ListCards from "./components/ListCards/ListCards";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
@@ -14,7 +14,13 @@ export default function Home() {
       <section className="main-content">
         <ListCards />
         <Banner
-          height={600}
+          showBadge
+          className={styles["second-banner"]}
+          classes={{
+            bannerOverlay: styles["second-banner-overlay"],
+            bannerAction: styles["second-banner-action"],
+            bannerDescription: styles["second-banner-description"],
+          }}
           bgImageSrc="/assets/heroBg2.jpeg"
           actionTitle="Start planning your trip"
           title="Richird Norton photorealistic rendering as real photos"

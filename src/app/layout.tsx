@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Banner from "./components/Banner";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Inspiration By Trazler",
