@@ -1,0 +1,71 @@
+// styles/Banner.module.scss
+
+$banner-padding: 3.75rem 0;
+$banner-color: #fff;
+$banner-bg-overlay: rgba(0, 0, 0, 0.5);
+$banner-title-font-size: 4rem;
+$banner-description-color: #fff;
+$banner-action-bg: #fff;
+$banner-action-color: #121416;
+
+.banner {
+  display: grid;
+  background-size: cover;
+  background-position: center;
+  padding: $banner-padding;
+  color: $banner-color;
+  text-align: center;
+  place-items: center;
+  height: 56.25rem;
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $banner-bg-overlay;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &-title {
+    width: auto;
+    height: auto;
+    font-size: $banner-title-font-size;
+    color: $banner-color;
+    font-family: "Europa-bold";
+    white-space: wrap;
+  }
+
+  &-description {
+    color: $banner-description-color;
+    font-family: 'Europa Regular';
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+  &-action {
+    background-color: $banner-action-bg;
+    color: $banner-action-color;
+    width: 20rem;
+    height: 3.375rem;
+    border-radius: 2px;
+    font-size: 20px;
+    font-family: "Europa-bold";
+    border: none;
+    outline: none;
+    &:hover {
+      border: none;
+      background-color: rgba($color: $banner-action-bg, $alpha: 0.9);
+    }
+  }
+}
