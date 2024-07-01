@@ -10,6 +10,7 @@ $banner-action-color: #121416;
 
 .banner {
   display: grid;
+  position: relative;
   background-size: cover;
   background-position: center;
   padding: $banner-padding;

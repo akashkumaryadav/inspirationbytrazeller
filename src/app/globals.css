@@ -3,6 +3,23 @@
 @import url(https://db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa+Regular);
 @import url(https://db.onlinewebfonts.com/c/d3bfee78e8ead45d9057a95bb6ff5de8?family=Europa-Bold);
 
-.root{
-  font-family: 'Europa Regular', 'Courier New', Courier, monospace;
+.root {
+  font-family: "Europa Regular", "Courier New", Courier, monospace;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  max-width: 100vw;
+  padding-top: 4rem;
+  @media (min-width: 1200px) {
+    padding-inline: 9rem;
+  }
+  @media (max-width: 1199px) {
+    padding-inline: 4rem;
+  }
+  @media (max-width: 800px) {
+    padding-inline: 2rem;
+  }
 }

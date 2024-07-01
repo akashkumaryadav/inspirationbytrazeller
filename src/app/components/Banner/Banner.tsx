@@ -5,6 +5,8 @@ import styles from "./banner.module.scss";
 
 interface BannerProps {
   bgImageSrc?: string;
+  width?:number;
+  height?: number;
   title?: string;
   description?: string;
   actionTitle?: string;

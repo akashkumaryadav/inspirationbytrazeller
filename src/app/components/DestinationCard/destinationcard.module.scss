@@ -1,0 +1,85 @@
+.card {
+  border: none;
+  font-family: "Europa-Regular", sans-serif;
+  //   width: 36.25rem;
+  //   height: 49.25rem;
+  padding-block: 2rem;
+  .imageContainer {
+    position: relative;
+    width: inherit;
+    height: 420px;
+    .cardImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .tags {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      .tag {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px 10px;
+        margin-right: 5px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .cardTitle {
+    font-family: "Europa-Bold", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .authorInfo {
+    display: flex;
+    align-items: center;
+
+    .authorInfoDetails {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .authorImage {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .date,
+    .shares {
+      display: inline;
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
+
+    .shares {
+      margin-left: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  .cardText {
+    margin: 10px 0;
+    color: #6c757d;
+  }
+
+  .viewPostButton {
+    font-size: 1.5rem;
+    padding-inline:0;
+    line-height: 2.5rem;
+    padding-bottom: 0.25rem;
+    font-family: "Europa-Bold";
+    font-weight: 700;
+    color: #121416;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,19 @@
+.listCards {
+  .loadMoreContainer {
+    text-align: center;
+    margin-top: 20px;
+    .loadMoreButton {
+      width: 15rem;
+      height: 3.375rem;
+      background-color: #fff;
+      color: #121416;
+      opacity: 0.6;
+      padding: 0.9rem 4.5rem;
+      border-radius: 2px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      border-color: currentColor;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  }
+}
