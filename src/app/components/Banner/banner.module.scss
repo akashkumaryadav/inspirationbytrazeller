@@ -46,6 +46,9 @@ $banner-action-color: #121416;
     color: $banner-color;
     font-family: "Europa-bold";
     white-space: wrap;
+    @media (max-width: 450px) {
+      font-size: 1.5rem;
+    }
   }
 
   &-description {
@@ -53,6 +56,9 @@ $banner-action-color: #121416;
     font-family: "Europa Regular";
     font-size: 2.25rem;
     margin-bottom: 1.5rem;
+    @media (max-width: 450px) {
+      font-size: 1rem;
+    }
   }
   &-action {
     background-color: $banner-action-bg;

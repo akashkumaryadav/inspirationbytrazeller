@@ -15,22 +15,93 @@
     margin-bottom: 1.5rem;
     line-height: 22.5px;
 
+    @media (max-width: 800px) {
+      font-size: 0.8rem;
+      margin: auto;
+    }
   }
   &-action {
     color: rgba(122, 101, 225, 1);
+
+    @media (max-width: 800px) {
+      font-size: 1rem;
+      width: fit-content;
+    }
+  }
+  &-title {
+    @media (max-width: 800px) {
+      font-size: 1rem;
+    }
   }
 }
 .banner-cards-container {
   display: flex;
   justify-content: space-between;
   row-gap: 1.5rem;
-
+  margin-top: 1rem;
 }
 .banner-card {
   width: auto;
   max-height: 260px;
   gap: 4px;
-  &-title{
+  &-title {
     font-size: 1.5rem;
+  }
+}
+
+.footer {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  &-brand {
+    margin: 0;
+    @media (max-width: 800px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &-content {
+    display: flex;
+    width: 100%;
+    padding-inline: 6rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  & > span > span {
+    display: block;
+  }
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+.scrollTop {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: flex-end;
+  background: gray;
+  align-items: stretch;
+  float: right;
+  padding: 0.5rem;
+  left: 80%;
+  color: #fff;
+}
+
+.destination {
+  font-family: "Europa-Bold";
+  & > h1 {
+    margin: 0;
   }
 }

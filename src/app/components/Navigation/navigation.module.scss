@@ -1,0 +1,87 @@
+.customTabs {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  overflow: auto;
+  padding: 0;
+  height: 2.375rem;
+  margin: 0;
+  font-size: 1rem;
+  align-content: flex-start;
+  .nav-link {
+    color: #000;
+    font-family: "Europa-Bold";
+    height: inherit;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 3px solid transparent;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+
+    &-active {
+      border: none;
+      border-bottom: 2px solid black;
+    }
+  }
+}
+
+.navbar {
+  width: 100%;
+  height: 6rem;
+  position: absolute;
+  z-index: 2;
+  padding-inline: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand {
+  font-family: "Cursive", sans-serif;
+}
+
+.brandName {
+  font-family: "TrazlerFont", sans-serif; /* Replace with the actual font if different */
+}
+
+.basic-navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navLink {
+  font-family: "Sans-serif", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  margin-right: 20px;
+  @media (max-width: 800px) {
+    font-family: "Sans-serif", sans-serif;
+    color: black;
+    background: white;
+    margin-right: 20px;
+    padding: 20px;
+    z-index: 20;
+  }
+}
+
+.navLink:hover {
+  color: lightgray;
+}
+
+.giftButton {
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.giftButton:hover {
+  background-color: darkgray;
+}
