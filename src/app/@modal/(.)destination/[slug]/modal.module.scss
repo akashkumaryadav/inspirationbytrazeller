@@ -1,29 +1,39 @@
 .modal-backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 .modal {
-  width: 80%;
-  max-width: 500px;
-  height: auto;
-  max-height: 500px;
+  font-size: medium;
   border: none;
-  border-radius: 12px;
   background-color: white;
   padding: 20px;
-  position: relative;
+  position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 48px;
   font-weight: 500;
+}
+
+.close-button {
+  padding-inline: 0;
+  line-height: 2.5rem;
+  padding-bottom: 0.25rem;
+  font-family: "Europa-Bold";
+  color: #121416;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  font-size: medium;
 }

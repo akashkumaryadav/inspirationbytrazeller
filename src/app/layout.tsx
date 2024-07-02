@@ -26,9 +26,9 @@ export default function RootLayout(props: {
             { text: "LifeStyle", href: "#blog-read" },
           ]}
         />
-        {props.children}
-        {props.modal}
         <div id="modal-root" />
+        {props.modal}
+        {props.children}
       </body>
     </html>
   );

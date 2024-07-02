@@ -4,6 +4,8 @@ import { type ElementRef, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import styles from "./modal.module.scss";
+import { BsTrash } from "react-icons/bs";
+import { Button } from "react-bootstrap";
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -15,16 +17,18 @@ export function Modal({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-
   function onDismiss() {
     router.back();
   }
 
   return createPortal(
-    <div className={styles["model-backdrop"]}>
-      <dialog ref={dialogRef} className={styles["model"]} onClose={onDismiss}>
+    <div className={styles["modal-backdrop"]}>
+      <dialog ref={dialogRef} className={styles["modal"]} onClose={onDismiss}>
         {children}
-        <button onClick={onDismiss} className="close-button" >Close</button>
+        <Button variant="light" onClick={onDismiss} className={styles["close-button"]}>
+          <BsTrash />
+          Close
+        </Button>
       </dialog>
     </div>,
     document.getElementById("modal-root")!
