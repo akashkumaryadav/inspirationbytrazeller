@@ -1,4 +1,9 @@
-export default function Loading() {
-  // Or a custom loading skeleton component
-  return <p>Loading...</p>;
-}
+const Loader = () => {
+  return (
+    <div className="loader-container">
+      <div className="loader"></div>
+    </div>
+  );
+};
+
+export default Loader;
