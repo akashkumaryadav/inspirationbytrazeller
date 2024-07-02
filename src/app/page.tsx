@@ -37,6 +37,47 @@ const relatedPosts = [
   },
 ];
 
+const mangaPost = [
+  {
+    title:
+      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+    date: "21 March 2021",
+    image: "/assets/manga1.jpeg",
+  },
+
+  {
+    title:
+      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+    date: "21 March 2021",
+    image: "/assets/manga2.jpeg",
+  },
+
+  {
+    title:
+      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+    date: "21 March 2021",
+    image: "/assets/manga3.jpeg",
+  },
+];
+
+const topDestination = [
+  {
+    title: "Dominican Republic",
+  },
+  {
+    title: "Maecenas Tincidunt",
+  },
+  {
+    title: "Dominican Republic",
+  },
+  {
+    title: "Dominican Republic",
+  },
+  {
+    title: "Dominican Republic",
+  },
+];
+
 const ComponentMap = new Map([
   [
     "Category name1",
@@ -48,6 +89,7 @@ const ComponentMap = new Map([
       mainDate={mainDate}
       mainSummary={mainSummary}
       relatedPosts={relatedPosts}
+      mangaPosts={mangaPost}
     />,
   ],
 ]);
@@ -87,10 +129,10 @@ export default function Home() {
           </span>
           <span>
             <Row className={styles["banner-cards-container"]}>
-              {Array.from({ length: 5 }).map((_, index) => (
+              {topDestination?.map((destination, index) => (
                 <Col key={`destination-${index}`} xl={2} lg={6} md={6} sm={6}>
                   <Banner
-                    title="Dominian Republic"
+                    title={destination.title}
                     className={styles["banner-card"]}
                     key={`destination-${index}`}
                     bgImageSrc={`/assets/destination${index + 1}.jpeg`}

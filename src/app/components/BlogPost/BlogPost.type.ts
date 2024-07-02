@@ -5,7 +5,7 @@ type RelatedPost = {
 };
 
 type ManageReadProps = {
-  relatedPosts: RelatedPost[];
+  mangaPosts: RelatedPost[];
 };
 
 type BlogPostProps = {
@@ -14,5 +14,6 @@ type BlogPostProps = {
   mainDate: string;
   mainSummary: string;
   relatedPosts: RelatedPost[];
+  mangaPosts: RelatedPost[];
   id?: string;
 };

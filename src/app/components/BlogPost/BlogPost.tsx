@@ -4,19 +4,20 @@ import { Card, Row, Col, ListGroup } from "react-bootstrap";
 import styles from "./blogpost.module.scss";
 import Banner from "../Banner";
 
-const ManageRead: React.FC<ManageReadProps> = ({ relatedPosts }) => {
+const ManageRead: React.FC<ManageReadProps> = ({ mangaPosts }) => {
   return (
     <>
       <h4>Manga Read</h4>
+      
       <ListGroup variant="flush">
-        {relatedPosts.map((post, index) => (
+        {mangaPosts.map((post, index) => (
           <ListGroup.Item
             key={index}
             className={styles["related-post-container"]}
           >
             <Banner
-              className={styles["banner-card"]}
-              key={`destination-${index}`}
+              className={styles["banner-card-manga"]}
+              key={`manga-${index}`}
               bgImageSrc={post.image}
             />
             <div>
@@ -36,6 +37,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
   mainTitle,
   mainSummary,
   relatedPosts,
+  mangaPosts
 }) => {
   return (
     <>
@@ -91,7 +93,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
           </Card>
         </Col>
         <Col>
-          <ManageRead relatedPosts={relatedPosts} />
+          <ManageRead mangaPosts={mangaPosts} />
         </Col>
       </Row>
     </>

@@ -12,6 +12,11 @@
   min-width: 9rem;
   height: 4rem;
   object-fit: cover;
+  &-manga {
+    max-width: 638px;
+    max-height: 120px;
+    width: 20rem;
+  }
 }
 
 .viewPostButton {
