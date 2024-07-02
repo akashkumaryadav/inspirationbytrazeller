@@ -14,4 +14,5 @@ type BlogPostProps = {
   mainDate: string;
   mainSummary: string;
   relatedPosts: RelatedPost[];
+  id?: string;
 };

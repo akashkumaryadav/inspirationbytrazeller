@@ -3,6 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import Image from "next/image";
 import styles from "./destinationcard.module.scss";
 import { DestinationCardProps } from "./DestinationCard.type";
+import Link from "next/link";
 
 const DestinationCard: React.FC<DestinationCardProps> = ({
   imageSrc,
@@ -12,6 +13,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
   date,
   shares,
   description,
+  href,
 }) => {
   return (
     <Card className={styles.card}>
@@ -45,17 +47,22 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
             <span>{author}</span>
             <hr style={{ display: "inline", width: "2rem" }} />
             <span className={styles.date}>{date}</span>
-            <span className={styles.shares}>&#x2022; {shares}<Image src="/assets/shareIcon.png" alt="shareIcon" width={12} height={12} /> shares</span>
+            <span className={styles.shares}>
+              &#x2022; {shares}
+              <Image
+                src="/assets/shareIcon.png"
+                alt="shareIcon"
+                width={12}
+                height={12}
+              />{" "}
+              shares
+            </span>
           </div>
         </div>
         <Card.Text className={styles.cardText}>{description}</Card.Text>
-        <Button
-          variant="link"
-          className={styles.viewPostButton}
-          //   onClick={onViewPost}
-        >
+        <Link className={styles.viewPostButton} href={href}>
           View Post
-        </Button>
+        </Link>
       </Card.Body>
     </Card>
   );

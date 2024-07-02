@@ -31,6 +31,7 @@ const ManageRead: React.FC<ManageReadProps> = ({ relatedPosts }) => {
 };
 
 const BlogPost: React.FC<BlogPostProps> = ({
+  id,
   mainImage,
   mainTitle,
   mainSummary,
@@ -38,7 +39,7 @@ const BlogPost: React.FC<BlogPostProps> = ({
 }) => {
   return (
     <>
-      <Row className="gap-4 m-2">
+      <Row className="gap-4 m-2" id={id}>
         <Col xl={8} lg={12} md={12} sm={12}>
           <Card className={styles.blogPostContainer}>
             <Row>

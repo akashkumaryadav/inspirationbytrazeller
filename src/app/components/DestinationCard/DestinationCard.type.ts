@@ -6,5 +6,5 @@ export interface DestinationCardProps {
   date: string;
   shares: number;
   description: string;
-//   onViewPost: () => void;
+  href: string;
 }

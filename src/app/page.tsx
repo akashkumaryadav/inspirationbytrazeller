@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Banner from "@/app/components/Banner";
 import { Col, Row } from "react-bootstrap";
 import { BlogPost } from "./components/BlogPost";
@@ -41,6 +41,7 @@ const ComponentMap = new Map([
   [
     "Category name1",
     <BlogPost
+      id="blog-read"
       key={mainTitle}
       mainTitle={mainTitle}
       mainImage={mainImage}
@@ -54,16 +55,6 @@ const ComponentMap = new Map([
 export default function Home() {
   return (
     <main>
-      <Navigation.PrimaryNaviation
-        menus={[
-          { text: "Destination", href: "#destination" },
-          { text: "Food" },
-          { text: "Well Being" },
-          { text: "Sport", href: "#main-content" },
-          { text: "Family" },
-          { text: "LifeStyle", href: "#blog-read" },
-        ]}
-      />
       <Banner
         key="banner"
         bgImageSrc="/assets/heroBg.jpeg"
@@ -90,10 +81,10 @@ export default function Home() {
         />
         <span className={styles["destination"]} id="destination">
           <h1>Top Destinations</h1>
-          <desc>
+          <span>
             Tick one more destination off of your bucket list with one of our
             most popular vacations in 2022
-          </desc>
+          </span>
           <span>
             <Row className={styles["banner-cards-container"]}>
               {Array.from({ length: 5 }).map((_, index) => (

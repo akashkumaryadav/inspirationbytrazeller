@@ -1,20 +1,35 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
   title: "Inspiration By Trazler",
   description: "Inspiration for Travel By Real People",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout(props: {
   children: React.ReactNode;
-}>) {
+  modal: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head></head>
-      <body className="root">{children}</body>
+      <body className="root">
+        <Navigation.PrimaryNaviation
+          menus={[
+            { text: "Home", href: "/" },
+            { text: "Destination", href: "#destination" },
+            { text: "Food" },
+            { text: "Well Being" },
+            { text: "Sport", href: "#main-content" },
+            { text: "Family" },
+            { text: "LifeStyle", href: "#blog-read" },
+          ]}
+        />
+        {props.children}
+        {props.modal}
+        <div id="modal-root" />
+      </body>
     </html>
   );
 }

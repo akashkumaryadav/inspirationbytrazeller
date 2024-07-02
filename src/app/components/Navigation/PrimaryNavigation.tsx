@@ -9,7 +9,7 @@ const PrimaryNaviation: React.FC<{
 }> = ({ menus }) => {
   return (
     <Navbar expand="lg" className={styles.navbar}>
-      <Navbar.Brand href="#home" className={styles.brand}>
+      <Navbar.Brand href="/" className={styles.brand}>
         <Image src="/assets/logo.svg" alt="alt" width={360} height={49} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

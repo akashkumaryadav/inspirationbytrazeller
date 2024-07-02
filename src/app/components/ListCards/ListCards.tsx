@@ -15,7 +15,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/1",
   },
 
   {
@@ -27,7 +27,8 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+
+    href: "/destination/1",
   },
 
   {
@@ -39,7 +40,8 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+
+    href: "/destination/1",
   },
 
   {
@@ -51,7 +53,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/3",
   },
 
   {
@@ -63,7 +65,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/3",
   },
 
   {
@@ -75,7 +77,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/3",
   },
 
   {
@@ -87,7 +89,8 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+
+    href: "/destination/3",
   },
 
   {
@@ -99,7 +102,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/3",
   },
 
   {
@@ -111,7 +114,7 @@ const cardsData = [
     shares: 1000,
     description:
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
-    onViewPost: () => console.log("View post clicked 1"),
+    href: "/destination/3",
   },
 ];
 
