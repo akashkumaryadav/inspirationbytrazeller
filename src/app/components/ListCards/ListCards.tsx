@@ -4,8 +4,11 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { DestinationCard } from "@/app/components/DestinationCard";
 import styles from "./listcards.module.scss";
 
+/**
+ * Sample data for the destination cards.
+ * Each card contains information such as image, tags, title, author, date, shares, description, and href.
+ */
 const cardsData = [
-  // Add your card data here
   {
     imageSrc: "/assets/destination4.jpeg",
     tags: ["Aenean Eleifend", "Aliquam"],
@@ -17,7 +20,6 @@ const cardsData = [
       "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem.",
     href: "/destination/1",
   },
-
   {
     imageSrc: "/assets/destination1.jpeg",
     tags: ["Aenean Eleifend", "Aliquam"],
@@ -118,7 +120,16 @@ const cardsData = [
   },
 ];
 
-const ListCards: React.FC = () => {
+/**
+ * ListCards component renders a list of DestinationCard components.
+ *
+ * - The card data is mapped from the cardsData array.
+ * - Each card is displayed within a Bootstrap column for a responsive layout.
+ * - A "Load More" button is provided to load more cards (currently non-functional).
+ *
+ * @returns {JSX.Element} The rendered ListCards component.
+ */
+const ListCards: React.FC = (): JSX.Element => {
   return (
     <Container className={styles.listCards}>
       <Row>

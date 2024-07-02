@@ -1,14 +1,17 @@
-// components/BlogPost.tsx
 import React from "react";
 import { Card, Row, Col, ListGroup } from "react-bootstrap";
 import styles from "./blogpost.module.scss";
 import Banner from "../Banner";
 
+/**
+ * ManageRead component displays a list of manga posts.
+ *
+ * @param {Array} mangaPosts - List of manga posts to display.
+ */
 const ManageRead: React.FC<ManageReadProps> = ({ mangaPosts }) => {
   return (
     <>
       <h4>Manga Read</h4>
-      
       <ListGroup variant="flush">
         {mangaPosts.map((post, index) => (
           <ListGroup.Item
@@ -31,13 +34,23 @@ const ManageRead: React.FC<ManageReadProps> = ({ mangaPosts }) => {
   );
 };
 
+/**
+ * BlogPost component displays the main blog post along with related posts and manga reads.
+ *
+ * @param {string} id - The ID for the main blog post container.
+ * @param {string} mainImage - Source URL for the main blog post image.
+ * @param {string} mainTitle - Title of the main blog post.
+ * @param {string} mainSummary - Summary of the main blog post.
+ * @param {Array} relatedPosts - List of related blog posts.
+ * @param {Array} mangaPosts - List of manga posts for the ManageRead component.
+ */
 const BlogPost: React.FC<BlogPostProps> = ({
   id,
   mainImage,
   mainTitle,
   mainSummary,
   relatedPosts,
-  mangaPosts
+  mangaPosts,
 }) => {
   return (
     <>

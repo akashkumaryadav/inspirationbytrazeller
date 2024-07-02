@@ -1,102 +1,103 @@
 "use client";
-import Banner from "@/app/components/Banner";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { BlogPost } from "./components/BlogPost";
-import { Footer } from "./components/Footer";
-import ListCards from "./components/ListCards/ListCards";
-import Navigation from "./components/Navigation";
-import styles from "./page.module.scss";
+import Banner from "@/app/components/Banner";
+import { BlogPost } from "@/app/components/BlogPost";
+import { Footer } from "@/app/components/Footer";
+import ListCards from "@/app/components/ListCards/ListCards";
+import Navigation from "@/app/components/Navigation";
+import styles from "@/app/page.module.scss";
 
-const mainImage = "/assets/destination8.jpeg";
-const mainTitle =
-  "Tick one more destination off of your bucket list with one of our most popular vacations in 2022";
-const mainDate = "1 Month Ago";
-const mainSummary =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet nibh id iaculis pharetra. Maecenas eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem.";
+// Define types for the data structure
+type Post = {
+  title: string;
+  date: string;
+  image: string;
+};
 
-const relatedPosts = [
-  {
-    title: "Akame Ga Kill: Season finale",
-    date: "21 March 2021",
-    image: "/assets/read1.png",
-  },
-  {
-    title: "Naruto Uzumaki: Hidden Village",
-    date: "21 March 2021",
-    image: "/assets/read2.jpeg",
-  },
-  {
-    title: "Love juice Season Premiere",
-    date: "21 March 2021",
-    image: "/assets/read3.jpeg",
-  },
-  {
-    title: "Love juice Season Premiere",
-    date: "21 March 2021",
-    image: "/assets/read4.jpeg",
-  },
-];
+type Destination = {
+  title: string;
+};
 
-const mangaPost = [
-  {
-    title:
-      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
-    date: "21 March 2021",
-    image: "/assets/manga1.jpeg",
-  },
+// Main content data
+const mainContent = {
+  mainImage: "/assets/destination8.jpeg",
+  mainTitle:
+    "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+  mainDate: "1 Month Ago",
+  mainSummary:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet nibh id iaculis pharetra. Maecenas eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem.",
+  relatedPosts: [
+    {
+      title: "Akame Ga Kill: Season finale",
+      date: "21 March 2021",
+      image: "/assets/read1.png",
+    },
+    {
+      title: "Naruto Uzumaki: Hidden Village",
+      date: "21 March 2021",
+      image: "/assets/read2.jpeg",
+    },
+    {
+      title: "Love juice Season Premiere",
+      date: "21 March 2021",
+      image: "/assets/read3.jpeg",
+    },
+    {
+      title: "Love juice Season Premiere",
+      date: "21 March 2021",
+      image: "/assets/read4.jpeg",
+    },
+  ] as Post[],
+  mangaPosts: [
+    {
+      title:
+        "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+      date: "21 March 2021",
+      image: "/assets/manga1.jpeg",
+    },
+    {
+      title:
+        "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+      date: "21 March 2021",
+      image: "/assets/manga2.jpeg",
+    },
+    {
+      title:
+        "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
+      date: "21 March 2021",
+      image: "/assets/manga3.jpeg",
+    },
+  ] as Post[],
+  topDestinations: [
+    { title: "Dominican Republic" },
+    { title: "Maecenas Tincidunt" },
+    { title: "Dominican Republic" },
+    { title: "Dominican Republic" },
+    { title: "Dominican Republic" },
+  ] as Destination[],
+};
 
-  {
-    title:
-      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
-    date: "21 March 2021",
-    image: "/assets/manga2.jpeg",
-  },
-
-  {
-    title:
-      "Tick one more destination off of your bucket list with one of our most popular vacations in 2022",
-    date: "21 March 2021",
-    image: "/assets/manga3.jpeg",
-  },
-];
-
-const topDestination = [
-  {
-    title: "Dominican Republic",
-  },
-  {
-    title: "Maecenas Tincidunt",
-  },
-  {
-    title: "Dominican Republic",
-  },
-  {
-    title: "Dominican Republic",
-  },
-  {
-    title: "Dominican Republic",
-  },
-];
-
+// Component map for navigation
 const ComponentMap = new Map([
   [
     "Category name1",
     <BlogPost
-      id="blog-read"
-      key={mainTitle}
-      mainTitle={mainTitle}
-      mainImage={mainImage}
-      mainDate={mainDate}
-      mainSummary={mainSummary}
-      relatedPosts={relatedPosts}
-      mangaPosts={mangaPost}
+      key={mainContent.mainTitle}
+      mainTitle={mainContent.mainTitle}
+      mainImage={mainContent.mainImage}
+      mainDate={mainContent.mainDate}
+      mainSummary={mainContent.mainSummary}
+      relatedPosts={mainContent.relatedPosts}
+      mangaPosts={mainContent.mangaPosts}
     />,
   ],
 ]);
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <main>
+      {/* Main banner section */}
       <Banner
         key="banner"
         bgImageSrc="/assets/heroBg.jpeg"
@@ -104,8 +105,13 @@ export default function Home() {
         title="INSPIRATION FOR TRAVEL BY REAL PEOPLE"
         description="Book Smart, travel simple"
       />
+
+      {/* Main content section */}
       <section className="main-content" id="main-content">
+        {/* List of cards section */}
         <ListCards />
+
+        {/* Secondary banner section */}
         <Banner
           key="secondary-banner"
           showBadge
@@ -121,6 +127,8 @@ export default function Home() {
           title="Richird Norton photorealistic rendering as real photos"
           description="Progressively incentivize cooperative systems through technically sound functionalities. The credibly productivate seamless data."
         />
+
+        {/* Top destinations section */}
         <span className={styles["destination"]} id="destination">
           <h1>Top Destinations</h1>
           <span>
@@ -128,8 +136,9 @@ export default function Home() {
             most popular vacations in 2022
           </span>
           <span>
+            {/* Top destinations cards */}
             <Row className={styles["banner-cards-container"]}>
-              {topDestination?.map((destination, index) => (
+              {mainContent.topDestinations.map((destination, index) => (
                 <Col key={`destination-${index}`} xl={2} lg={6} md={6} sm={6}>
                   <Banner
                     title={destination.title}
@@ -145,28 +154,24 @@ export default function Home() {
             </Row>
           </span>
         </span>
+
+        {/* Secondary navigation with mapped components */}
         <Navigation.SecondaryNavigation
           tabs={[
-            {
-              title: "Category name",
-            },
-            {
-              title: "Category name",
-            },
-            {
-              title: "Category name",
-            },
-            {
-              title: "Category name",
-            },
-            {
-              title: "Category name",
-            },
+            { title: "Category name" },
+            { title: "Category name" },
+            { title: "Category name" },
+            { title: "Category name" },
+            { title: "Category name" },
           ]}
           componentMap={ComponentMap}
         />
       </section>
+
+      {/* Footer section */}
       <Footer />
     </main>
   );
-}
+};
+
+export default Home;

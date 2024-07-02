@@ -1,17 +1,36 @@
-"use client"
-import { Col, Row } from "react-bootstrap";
-import { FaArrowUp, FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaYoutube } from "react-icons/fa";
-import styles from "./footer.module.scss"
+"use client";
 
-const Footer = () => {
+import { Col, Row } from "react-bootstrap";
+import {
+  FaArrowUp,
+  FaFacebookF,
+  FaInstagram,
+  FaPinterestP,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
+import styles from "./footer.module.scss";
+
+/**
+ * Footer component displays the footer section of the website.
+ *
+ * - Includes the brand information and social media icons with follower counts.
+ * - A button to scroll back to the top of the page is also included.
+ *
+ * @returns {JSX.Element} The rendered Footer component.
+ */
+const Footer = (): JSX.Element => {
   return (
-    <footer className={styles["footer"]}>
+    <footer className={styles.footer}>
       <Row className={styles["footer-content"]}>
+        {/* Brand information */}
         <Col md={6} sm={12}>
           <p className={styles["footer-brand"]}>
             Designed & Developed by <strong>XP DESIGN</strong>
           </p>
         </Col>
+
+        {/* Social media icons with follower counts */}
         <Col md={6} sm={12} className={styles.socialIcons}>
           <span>
             <FaFacebookF />
@@ -34,9 +53,11 @@ const Footer = () => {
             <span>168K</span>
           </span>
         </Col>
+
+        {/* Scroll to top button */}
         <Col>
           <button
-            className={styles["scrollTop"]}
+            className={styles.scrollTop}
             onClick={() => {
               window.scrollTo({
                 top: 0,
