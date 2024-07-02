@@ -13,7 +13,10 @@ export default function RootLayout(props: {
 }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link href="https://db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa+Regular" rel="stylesheet"></link>
+        <link href="https://db.onlinewebfonts.com/c/d3bfee78e8ead45d9057a95bb6ff5de8?family=Europa-Bold" rel="stylesheet"></link>
+      </head>
       <body className="root">
         <Navigation.PrimaryNaviation
           menus={[
