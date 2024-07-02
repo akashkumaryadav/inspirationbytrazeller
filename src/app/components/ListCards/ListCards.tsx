@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { DestinationCard } from "@/app/components/DestinationCard";
 import styles from "./listcards.module.scss";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 /**
  * Sample data for the destination cards.
@@ -132,6 +133,26 @@ const cardsData = [
 const ListCards: React.FC = (): JSX.Element => {
   return (
     <Container className={styles.listCards}>
+      <Row className="d-flex w-100 justify-content-end align-items-center">
+        <Col className={styles.socialIcons}>
+          <span>
+            <FaFacebookF />
+            <span>29M</span>
+          </span>
+          <span>
+            <FaTwitter />
+            <span>70K</span>
+          </span>
+          <span>
+            <FaInstagram />
+            <span>40M</span>
+          </span>
+          <span>
+            <FaYoutube />
+            <span>168K</span>
+          </span>
+        </Col>
+      </Row>
       <Row>
         {cardsData.map((card, index) => (
           <Col key={index} xs={12} sm={6} md={4} lg={4}>
