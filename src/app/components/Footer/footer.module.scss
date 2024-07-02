@@ -1,0 +1,49 @@
+.footer {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  &-brand {
+    margin: 0;
+    @media (max-width: 800px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &-content {
+    display: flex;
+    width: 100%;
+    padding-inline: 6rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  & > span > span {
+    display: block;
+  }
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+.scrollTop {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: flex-end;
+  background: gray;
+  align-items: stretch;
+  float: right;
+  padding: 0.5rem;
+  left: 80%;
+  color: #fff;
+}

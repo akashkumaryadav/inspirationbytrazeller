@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { Button, Form, Nav, Navbar } from "react-bootstrap";
 import { FaMagnifyingGlass } from "react-icons/fa6";

@@ -1,0 +1,28 @@
+.related-post-container {
+  display: flex;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.banner-card {
+  min-width: 9rem;
+  height: 4rem;
+  object-fit: cover;
+}
+
+.viewPostButton {
+  font-size: 1.5rem;
+  padding-inline: 0;
+  line-height: 2.5rem;
+  padding-bottom: 0.25rem;
+  font-family: "Europa-Bold";
+  font-weight: 700;
+  color: #121416;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+}

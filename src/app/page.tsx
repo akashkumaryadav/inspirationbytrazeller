@@ -1,34 +1,67 @@
-"use client";
+"use client"
 import Banner from "@/app/components/Banner";
-import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import {
-  FaArrowUp,
-  FaFacebookF,
-  FaInstagram,
-  FaPinterestP,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { BlogPost } from "./components/BlogPost";
+import { Footer } from "./components/Footer";
 import ListCards from "./components/ListCards/ListCards";
 import Navigation from "./components/Navigation";
 import styles from "./page.module.scss";
 
-// eslint-disable-next-line react/jsx-key
-const ComponentMap = new Map([["Category name1", <h1>Hello</h1>]]);
+const mainImage = "/assets/destination8.jpeg";
+const mainTitle =
+  "Tick one more destination off of your bucket list with one of our most popular vacations in 2022";
+const mainDate = "1 Month Ago";
+const mainSummary =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet nibh id iaculis pharetra. Maecenas eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem.";
+
+const relatedPosts = [
+  {
+    title: "Akame Ga Kill: Season finale",
+    date: "21 March 2021",
+    image: "/assets/read1.png",
+  },
+  {
+    title: "Naruto Uzumaki: Hidden Village",
+    date: "21 March 2021",
+    image: "/assets/read2.jpeg",
+  },
+  {
+    title: "Love juice Season Premiere",
+    date: "21 March 2021",
+    image: "/assets/read3.jpeg",
+  },
+  {
+    title: "Love juice Season Premiere",
+    date: "21 March 2021",
+    image: "/assets/read4.jpeg",
+  },
+];
+
+const ComponentMap = new Map([
+  [
+    "Category name1",
+    <BlogPost
+      key={mainTitle}
+      mainTitle={mainTitle}
+      mainImage={mainImage}
+      mainDate={mainDate}
+      mainSummary={mainSummary}
+      relatedPosts={relatedPosts}
+    />,
+  ],
+]);
 
 export default function Home() {
-  const [key, setKey] = useState<string>("Category name1");
   return (
     <main>
       <Navigation.PrimaryNaviation
         menus={[
-          { text: "Destination" },
+          { text: "Destination", href: "#destination" },
           { text: "Food" },
           { text: "Well Being" },
-          { text: "Sport" },
+          { text: "Sport", href: "#main-content" },
           { text: "Family" },
-          { text: "LifeStyle" },
+          { text: "LifeStyle", href: "#blog-read" },
         ]}
       />
       <Banner
@@ -38,7 +71,7 @@ export default function Home() {
         title="INSPIRATION FOR TRAVEL BY REAL PEOPLE"
         description="Book Smart, travel simple"
       />
-      <section className="main-content">
+      <section className="main-content" id="main-content">
         <ListCards />
         <Banner
           key="secondary-banner"
@@ -55,7 +88,7 @@ export default function Home() {
           title="Richird Norton photorealistic rendering as real photos"
           description="Progressively incentivize cooperative systems through technically sound functionalities. The credibly productivate seamless data."
         />
-        <span className={styles["destination"]}>
+        <span className={styles["destination"]} id="destination">
           <h1>Top Destinations</h1>
           <desc>
             Tick one more destination off of your bucket list with one of our
@@ -97,54 +130,10 @@ export default function Home() {
               title: "Category name",
             },
           ]}
-          activeTab={key}
-          setActiveTab={setKey}
+          componentMap={ComponentMap}
         />
-        {key && ComponentMap.get(key)}
       </section>
-      <footer className={styles["footer"]}>
-        <Row className={styles["footer-content"]}>
-          <Col md={6} sm={12}>
-            <p className={styles["footer-brand"]}>
-              Designed & Developed by <strong>XP DESIGN</strong>
-            </p>
-          </Col>
-          <Col md={6} sm={12} className={styles.socialIcons}>
-            <span>
-              <FaFacebookF />
-              <span>29</span>
-            </span>
-            <span>
-              <FaTwitter />
-              <span>70K</span>
-            </span>
-            <span>
-              <FaInstagram />
-              <span>40</span>
-            </span>
-            <span>
-              <FaPinterestP />
-              <span>13K</span>
-            </span>
-            <span>
-              <FaYoutube />
-              <span>168K</span>
-            </span>
-          </Col>
-          <Col>
-            <button
-              className={styles["scrollTop"]}
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                });
-              }}
-            >
-              <FaArrowUp />
-            </button>
-          </Col>
-        </Row>
-      </footer>
+      <Footer />
     </main>
   );
 }

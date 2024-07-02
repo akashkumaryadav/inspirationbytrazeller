@@ -1,14 +1,15 @@
+"use client"
 import clsx from "clsx";
 import styles from "./navigation.module.scss";
+import React, { useState } from "react";
 const SecondaryNavigation = ({
   tabs,
-  activeTab,
-  setActiveTab,
+  componentMap = new Map([["1", <></>]]),
 }: {
   tabs: Array<{ title: string }>;
-  activeTab: string;
-  setActiveTab: React.Dispatch<string>;
+  componentMap: Map<string, React.ReactElement>;
 }) => {
+  const [activeTab, setActiveTab] = useState<string>("Category name1");
   return (
     <div className={styles["navbar-container"]}>
       <ul id="controlled-tab-example" className={styles["customTabs"]}>
@@ -32,6 +33,7 @@ const SecondaryNavigation = ({
           </li>
         ))}
       </ul>
+      {activeTab && componentMap && componentMap.get(activeTab)}
     </div>
   );
 };
