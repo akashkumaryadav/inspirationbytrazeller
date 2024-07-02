@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/Navigation";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Inspiration By Trazler",
@@ -15,6 +16,17 @@ export default function RootLayout(props: {
   return (
     <html lang="en">
       <head>
+        <script async></script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-13R8JW1L7L"
+        />
+        <Script id="gtag">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-13R8JW1L7L');`}
+        </Script>
         <link
           href="https://db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa+Regular"
           rel="stylesheet"
