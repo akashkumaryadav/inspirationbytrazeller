@@ -20,6 +20,7 @@
     background-color: transparent;
     padding: 0;
     border-bottom: 3px solid transparent;
+
     &:hover {
       color: #000;
       text-decoration: none;
@@ -58,10 +59,14 @@
 }
 
 .navLink {
-  font-family: "Sans-serif", sans-serif;
-  color: white;
+  font-family: 'Europa-Bold';
   text-transform: uppercase;
   margin-right: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: currentColor;
   @media (max-width: 800px) {
     font-family: "Sans-serif", sans-serif;
     color: black;
